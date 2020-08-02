@@ -1,9 +1,6 @@
 let b=document.getElementById('btn');
-let count=0;
 function call(){
-    count++;
-    if(count>1)
-        document.getElementById('demo').innerText="";
+    document.getElementById('demo').innerText="";
     display();
 }
 
@@ -25,14 +22,15 @@ async function display(){
             let total_case=data.Countries[i].TotalConfirmed;
             let total_death=data.Countries[i].TotalDeaths;
             let total_recover=data.Countries[i].TotalRecovered;
-
+             
+            //creates row for table
             let tr=document.createElement('tr');
 
-            let th_1=document.createTextNode('Country');
-            let th_11=document.createElement('th');
-            th_11.appendChild(th_1);
-            tr.appendChild(th_11)
-            t_data.appendChild(tr);
+            let th_1=document.createTextNode('Country');//creates textnode to store Country
+            let th_11=document.createElement('th');//cretaes heading for the row in the table
+            th_11.appendChild(th_1); //appends the text of textnode to the heading(th)
+            tr.appendChild(th_11);//appends th to the row of the table
+            t_data.appendChild(tr);//appends the row to the table and vice versa
 
             let th_2=document.createTextNode('Total Confirmed');
             let th_12=document.createElement('th');
