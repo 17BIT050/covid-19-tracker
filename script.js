@@ -8,7 +8,7 @@ function call(){
 async function display(){
     let response=await fetch('https://api.covid19api.com/summary');
     let data=await response.json();
-    console.log(data);
+   // console.log(data);
     let nation=document.getElementById('txt').value;
     document.getElementById('txt').value='';
 
